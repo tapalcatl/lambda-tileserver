@@ -1,0 +1,30 @@
+{
+  "name": "lambda-tileserver",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Seth Fitzsimmons <seth@mojodna.net>",
+  "license": "ISC",
+  "scripts": {
+    "initialize-lambda": "claudia create --handler lambda.handler --deploy-proxy-api --region us-east-1",
+    "deploy-lambda": "claudia update --set-env TMPDIR=/tmp,NODE_ENV=production,DEFAULT_BLOCK_SIZE=262144,SOURCE=${SOURCE}"
+  },
+  "devDependencies": {
+    "claudia": "^5.1.2"
+  },
+  "dependencies": {
+    "@mapbox/tilelive": "^6.0.0",
+    "async": "^2.6.1",
+    "aws-serverless-express": "^3.3.5",
+    "cachecache": "^1.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "handlebars": "^4.0.12",
+    "morgan": "^1.9.1",
+    "require-env": "^0.2.1",
+    "response-time": "^2.3.2",
+    "tilelive-cache": "^0.7.1",
+    "tilelive-modules": "^0.4.1",
+    "tilelive-tapalcatl": "^0.2.0"
+  }
+}
